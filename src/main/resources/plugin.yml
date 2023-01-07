@@ -1,0 +1,6 @@
+name: Origins
+version: '${project.version}'
+main: dev.jamieisgeek.origins.Origins
+api-version: 1.19
+authors: [ JamieIsGeek ]
+description: A spigot recreation of the Origins Mod
