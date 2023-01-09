@@ -1,5 +1,6 @@
 package dev.jamieisgeek.origins.Models;
 
+import dev.jamieisgeek.origins.Manager;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -107,6 +108,7 @@ public class GUIs {
         inventory.setItem(34, feline);
 
         player.openInventory(inventory);
+        Manager.getManager().addPlayerInventory(player, inventory);
     }
 
     private void swapSelection(Player player) {

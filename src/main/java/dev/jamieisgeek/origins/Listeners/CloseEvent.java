@@ -13,8 +13,10 @@ import javax.xml.crypto.Data;
 public class CloseEvent implements Listener {
     @EventHandler
     public void onInventoryClose(InventoryCloseEvent event) {
-        if (event.getView().getTitle().equals(ChatColor.GOLD + "Select your Origin") && !Database.getDatabase().checkPlayerOrigin((Player) event.getPlayer())) {
+        if (Manager.getManager().getPlayerInventories().get(event.getPlayer()) == event.getInventory() && !Database.getDatabase().checkPlayerOrigin((Player) event.getPlayer())) {
             Manager.getManager().setPlayerSelecting((Player) event.getPlayer(), "initSelect");
+        } else {
+            Manager.getManager().removePlayerInventory((Player) event.getPlayer(), event.getInventory());
         }
     }
 }
